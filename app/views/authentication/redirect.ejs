@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DSS | <%= sucess !== undefined && !success ? 'Error' : 'Done' %></title>
+</head>
+<body>
+  <% if (redirect) { %>
+    <script>
+      location.replace(location.pathname + location.hash.replace('#', '?'));
+    </script>
+  <% } else { %>
+    <% if (success) { %>
+      <h1>All done!</h1>
+      <p>Please return to the app that sent you here and follow its instructions.</p>
+    <% } else { %>
+      <h1>Error</h1>
+      <p>The app that sent you here didn't provide the necessary data. This is most likely a bug with that app.</p>
+    <% } %>
+  <% } %>
+</body>
+</html>

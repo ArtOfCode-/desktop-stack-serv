@@ -1,0 +1,12 @@
+{
+  "name": "desktop-stack-serv",
+  "description": "Auth server for desktop apps using the Stack Exchange API.",
+  "author": "ArtOfCode-",
+  "repository": "https://github.com/ArtOfCode-/desktop-stack-serv",
+  "bugs": "https://github.com/ArtOfCode-/desktop-stack-serv",
+  "version": "0.1.0",
+  "license": "MIT",
+  "dependencies": {
+    "node-nails": "^0.2.3"
+  }
+}
