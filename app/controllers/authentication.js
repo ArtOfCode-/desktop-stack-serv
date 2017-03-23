@@ -4,8 +4,8 @@ var accessTokens = {};
 
 exports.redirect = function (req, render) {
   var uri = url.parse(req.url, true);
-  if (!uri.query.hasOwnProperty('access_token')) {
-    render({view: true, locals: {redirect: true}});
+  if (!uri.query.access_token) {
+    render({view: true, locals: {redirect: true, success: false}});
   }
   else {
     var state = uri.query.state;
@@ -25,6 +25,7 @@ exports.token = function (req, render) {
   if (uri.query.key) {
     var token = accessTokens[uri.query.key];
     if (token) {
+      delete accessTokens[uri.query.key];
       render({json: {access_token: token}});
     }
     else {
