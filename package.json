@@ -4,7 +4,7 @@
   "author": "ArtOfCode-",
   "repository": "https://github.com/ArtOfCode-/desktop-stack-serv",
   "bugs": "https://github.com/ArtOfCode-/desktop-stack-serv",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "license": "MIT",
   "dependencies": {
     "node-nails": "^0.2.7"
