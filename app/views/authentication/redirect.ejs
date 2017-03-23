@@ -6,7 +6,12 @@
 <body>
   <% if (redirect) { %>
     <script>
-      location.replace(location.pathname + location.hash.replace('#', '?'));
+      if (location.hash && location.hash !== "") {
+        location.replace(location.pathname + location.hash.replace('#', '?'));
+      }
+      else {
+        location.replace(location.pathname + "?error=true");
+      }
     </script>
   <% } else { %>
     <% if (success) { %>

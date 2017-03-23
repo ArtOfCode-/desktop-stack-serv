@@ -4,7 +4,10 @@ var accessTokens = {};
 
 exports.redirect = function (req, render) {
   var uri = url.parse(req.url, true);
-  if (!uri.query.access_token) {
+  if (uri.query.error && uri.query.error === "true") {
+    render({view: true, locals: {redirect: false, success: false}});
+  }
+  else if (!uri.query.access_token && !uri.query.state) {
     render({view: true, locals: {redirect: true, success: false}});
   }
   else {
