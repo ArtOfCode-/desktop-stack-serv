@@ -7,6 +7,6 @@
   "version": "1.0.0",
   "license": "MIT",
   "dependencies": {
-    "node-nails": "^0.2.7"
+    "node-nails": "^0.3.0"
   }
 }
