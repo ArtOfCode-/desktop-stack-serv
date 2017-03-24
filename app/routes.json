@@ -1,4 +1,5 @@
 [
   { "type": "GET", "url": "/auth/redirect", "to": "authentication.redirect" },
-  { "type": "GET", "url": "/auth/token", "to": "authentication.token" }
+  { "type": "GET", "url": "/auth/token", "to": "authentication.token" },
+  { "type": "GET", "url": "/", "to": "authentication.index" }
 ]
