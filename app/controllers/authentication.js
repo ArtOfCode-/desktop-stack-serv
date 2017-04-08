@@ -33,13 +33,15 @@ exports.token = function (req) {
     var token = accessTokens[uri.query.key];
     if (token) {
       delete accessTokens[uri.query.key];
-      this.render({json: {access_token: token}});
+      this.render({json: {access_token: token}, headers: {'Access-Control-Allow-Origin': '*'}});
     }
     else {
-      this.render({json: {error_name: 'no_token', error_message: 'No token was found for the given key'}, status: 404});
+      this.render({json: {error_name: 'no_token', error_message: 'No token was found for the given key'}, status: 404,
+                   headers: {'Access-Control-Allow-Origin': '*'}});
     }
   }
   else {
-    this.render({json: {error_name: 'no_key', error_message: 'No key was provided to fetch token with'}, status: 400});
+    this.render({json: {error_name: 'no_key', error_message: 'No key was provided to fetch token with'}, status: 400,
+                 headers: {'Access-Control-Allow-Origin': '*'}});
   }
 };
